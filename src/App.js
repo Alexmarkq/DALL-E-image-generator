@@ -1,6 +1,6 @@
 import './App.css';
 import { useState } from "react";
-import logo from "./logo192.png"
+import Loader from './components/Loader';
 
 const { Configuration, OpenAIApi } = require("openai");
 
@@ -16,8 +16,10 @@ function App() {
 
   const [userPrompt, setUserPrompt] = useState("")
   const [imageUrl, setImageUrl] = useState("")
+  const [loadingImage, setLoadingImage] = useState(false)
 
   const generateImage = async () => {
+    setLoadingImage(true)
     const imageParameters = {
       prompt: userPrompt,
       n: 1,
@@ -27,6 +29,7 @@ function App() {
     const urlData = response.data.data[0].url
     console.log(urlData);
     setImageUrl(urlData);
+    setLoadingImage(false)
   }
 
   return (
@@ -35,8 +38,12 @@ function App() {
     <div className="App">
       {
         imageUrl
-          ? <img src={imageUrl} className="image" alt="ai thing" />
-          : <img src={logo} className="image" alt="logo" />
+          ?
+
+          <img src={imageUrl} className="image" alt="ai thing" />
+
+          :
+          <img src="" className="image" alt="ai thing" />
       }
       <p>Generate a unique image using DALL·E</p>
       <p>What do you want to see?</p>
@@ -44,7 +51,15 @@ function App() {
         placeholder='A sunset on the Sydney Opera House'
         onChange={(e) => setUserPrompt(e.target.value)}
       />
-      <button onClick={() => generateImage()}>Generate</button>
+      <button
+        onClick={() => generateImage()}
+        disabled={loadingImage}>{loadingImage
+          ?
+          'Loading...'
+          :
+          'Generate'}
+
+      </button>
     </div>
   );
 }
