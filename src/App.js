@@ -1,6 +1,6 @@
 import './App.css';
 import { useState } from "react";
-import DalleImg from "./images/dalle.jpeg"
+import DalleImg from "./images/dalle.webp"
 import { Container, Row, Col } from 'react-bootstrap'
 
 const { Configuration, OpenAIApi } = require("openai");
@@ -37,39 +37,39 @@ function App() {
   }
 
   return (
-    <div className='home'>
-      <Container>
-        <Row>
-          <Col>
-            <p>Generate a unique image using DALL·E</p>
-            <p>What do you want to see?</p>
-            <input
-              placeholder='A sunset on the Sydney Opera House'
-              onChange={(e) => setUserPrompt(e.target.value)}
-            />
-            <button
-              onClick={() => generateImage()}
-              disabled={loadingImage}>
-              {loadingImage
-                ?
-                'Loading...'
-                :
-                'Generate'}
+    <Container className='mt-5'>
 
-            </button>
-          </Col>
-
-          <Col >
-            {imageUrl
+      <Row className='text-center'>
+        <Col className='col-md-12 col-sm-12 col-xl-6 title'>
+          <p>Generate a unique image using DALL·E</p>
+          <p>What do you want to see?</p>
+          <input
+            placeholder='A sunset on the Sydney Opera House'
+            onChange={(e) => setUserPrompt(e.target.value)}
+          />
+          <button
+            onClick={() => generateImage()}
+            disabled={loadingImage}>
+            {loadingImage
               ?
-              <img src={imageUrl} className="image" alt="ai thing" />
+              'Loading...'
               :
-              <img src={DalleImg} className="hero" alt="DALL-E" />
-            }
-          </Col>
-        </Row>
-      </Container>
-    </div>
+              'Generate'}
+
+          </button>
+        </Col>
+
+        <Col className='mt-5 col-md-12 col-sm-12 col-xl-6'>
+          {imageUrl
+            ?
+            <img src={imageUrl} className="hero" alt="generated img" />
+            :
+            <img src={DalleImg} className="hero" alt="DALL-E" />
+          }
+        </Col>
+      </Row>
+
+    </Container>
   )
 
 }

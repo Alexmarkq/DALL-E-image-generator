@@ -2,10 +2,19 @@
   text-align: center;
 }
 
-.home {
-  background-color: black;
-}
 
 .hero {
   width: 512px;
+}
+
+@media (max-width: 575px) {
+  .hero {
+    width: 400px;
+  }
+}
+
+@media (max-width: 435px) {
+  .hero {
+    width: 300px;
+  }
 }
