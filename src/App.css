@@ -3,18 +3,81 @@
 }
 
 
-.hero {
+
+.image {
   width: 512px;
+  border: 1px solid #f7aa04;
+  border-radius: 12px;
+}
+
+
+.input-group {
+  display: flex;
+  align-items: center;
+  justify-content: center
+}
+
+.input {
+  min-height: 50px;
+  width: 300px;
+  padding: 0 1rem;
+  color: #040404;
+  font-size: 15px;
+  border: 1px solid #f7aa04;
+  border-radius: 6px 0 0 6px;
+  background-color: transparent;
+}
+
+.button--submit {
+  min-height: 50px;
+  padding: .5em 1em;
+  border: none;
+  border-radius: 0 6px 6px 0;
+  background-color: #f7aa04;
+  color: #fff;
+  font-size: 15px;
+  cursor: pointer;
+  transition: background-color .3s ease-in-out;
+}
+
+.button--submit:hover {
+  background-color: #c68802;
+}
+
+.input:focus,
+.input:focus-visible {
+  border-color: #c68802;
+  outline: none;
 }
 
 @media (max-width: 575px) {
-  .hero {
+  .image {
     width: 400px;
+  }
+
+  .button--submit {
+    margin-top: 5px;
+    width: 300px;
+    min-height: 50px;
+    padding: .5em 1em;
+    border: none;
+
+    background-color: #f7aa04;
+    color: #fff;
+    font-size: 15px;
+    cursor: pointer;
+    transition: background-color .3s ease-in-out;
   }
 }
 
 @media (max-width: 435px) {
-  .hero {
+  .image {
     width: 300px;
+  }
+}
+
+@media (min-width: 1200px) {
+  .title {
+    margin-top: 12rem;
   }
 }

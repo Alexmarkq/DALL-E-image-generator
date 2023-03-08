@@ -40,31 +40,44 @@ function App() {
     <Container className='mt-5'>
 
       <Row className='text-center'>
-        <Col className='col-md-12 col-sm-12 col-xl-6 title'>
+
+        <Col className='title col-md-12 col-sm-12 col-xl-6'>
+
+
+
+
           <p>Generate a unique image using DALL·E</p>
           <p>What do you want to see?</p>
-          <input
-            placeholder='A sunset on the Sydney Opera House'
-            onChange={(e) => setUserPrompt(e.target.value)}
-          />
-          <button
-            onClick={() => generateImage()}
-            disabled={loadingImage}>
-            {loadingImage
-              ?
-              'Loading...'
-              :
-              'Generate'}
 
-          </button>
+
+          <div class="input-group">
+
+            <input
+              class="input"
+              placeholder='A sunset on the Sydney Opera House'
+              onChange={(e) => setUserPrompt(e.target.value)}
+            />
+            <button
+              type="submit"
+              class="button--submit"
+              onClick={() => generateImage()}
+              disabled={loadingImage}>
+              {loadingImage
+                ?
+                'Loading...'
+                :
+                'Generate'}
+
+            </button>
+          </div>
         </Col>
 
         <Col className='mt-5 col-md-12 col-sm-12 col-xl-6'>
           {imageUrl
             ?
-            <img src={imageUrl} className="hero" alt="generated img" />
+            <img src={imageUrl} className="image" alt="generated img" />
             :
-            <img src={DalleImg} className="hero" alt="DALL-E" />
+            <img src={DalleImg} className="image" alt="DALL-E" />
           }
         </Col>
       </Row>
