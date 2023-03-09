@@ -44,17 +44,17 @@ function App() {
         <Col className='title col-md-12 col-sm-12 col-xl-6'>
 
 
+          <blockquote>
+            <p>Generate a unique image using DALL·E</p>
+            <p>What do you want to see?</p>
 
-
-          <p>Generate a unique image using DALL·E</p>
-          <p>What do you want to see?</p>
-
+          </blockquote>
 
           <div class="input-group">
 
             <input
               class="input"
-              placeholder='A sunset on the Sydney Opera House'
+              placeholder='A realistic 3d avocado'
               onChange={(e) => setUserPrompt(e.target.value)}
             />
             <button

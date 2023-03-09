@@ -4,10 +4,32 @@
 
 
 
+:root {
+  --color-primary: hsl(47, 100%, 50%);
+  --color-secondary: #9e4af7;
+  --background: hsl(230, 30%, 15%);
+  --text: hsl(310, 100%, 95%);
+}
+
+blockquote {
+  font-weight: 500;
+  letter-spacing: -1px;
+  margin-left: 0;
+  padding: 1rem 0 1rem 2rem;
+  font-size: 1.2rem;
+  color: #9e4af7;
+
+}
+
 .image {
   width: 512px;
-  border: 1px solid #f7aa04;
+  box-shadow: 1px 1px 15px rgba(0, 0, 0, 0.202);
   border-radius: 12px;
+  transition: transform .4s;
+}
+
+.image:hover {
+  transform: scale(1.02)
 }
 
 
@@ -18,17 +40,25 @@
 }
 
 .input {
+  font-weight: 500;
+  letter-spacing: -0.5px;
   min-height: 50px;
   width: 300px;
   padding: 0 1rem;
-  color: #040404;
-  font-size: 15px;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-image: linear-gradient(35deg,
+      var(--color-secondary),
+      var(--color-primary));
+  font-size: 17px;
   border: 1px solid #f7aa04;
   border-radius: 6px 0 0 6px;
   background-color: transparent;
 }
 
 .button--submit {
+  font-weight: 500;
+  letter-spacing: -1px;
   min-height: 50px;
   padding: .5em 1em;
   border: none;
