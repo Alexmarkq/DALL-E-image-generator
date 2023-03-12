@@ -1,6 +1,6 @@
 import './App.css';
 import { useState } from "react";
-import DalleImg from "./images/dalle.webp"
+import DalleImg from "./images/dalle.gif"
 import { Container, Row, Col } from 'react-bootstrap'
 
 const { Configuration, OpenAIApi } = require("openai");
