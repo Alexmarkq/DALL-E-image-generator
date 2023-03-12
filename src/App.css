@@ -58,8 +58,8 @@ blockquote {
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-image: linear-gradient(35deg,
-      var(--color-secondary),
-      var(--color-primary));
+      #ffffff,
+      #f6ba06);
   font-size: 17px;
   border: 1px solid #fae847;
   border-radius: 6px 0 0 6px;
@@ -123,6 +123,26 @@ blockquote {
   }
 }
 
+.social-container {
+  padding: 25px 50px;
+
+
+}
+
+a.social {
+  color: #989898;
+  margin: 0 1rem;
+  transition: transform 250ms;
+  display: inline-block;
+}
+
+a.social:hover {
+  transform: translateY(-2px);
+}
+
+
+
+
 @media (max-width: 435px) {
   .image {
     width: 300px;
@@ -133,4 +153,22 @@ blockquote {
   .title {
     margin-top: 12rem;
   }
+
+  #footer {
+    background-attachment: scroll;
+
+    bottom: auto;
+    left: auto;
+    padding: 4em 4em 6em 4em;
+    position: relative;
+    text-align: center;
+    width: 100%;
+  }
+
+  #footer .icons {
+    margin: 0 0 1em 0;
+  }
+
+
+
 }

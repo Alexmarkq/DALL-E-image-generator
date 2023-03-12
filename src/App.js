@@ -1,4 +1,5 @@
 import './App.css'
+import SocialFollow from "./components/SocialFollow"
 import { useState } from "react"
 import DalleImg from "./images/dalle.gif"
 import { Container, Row, Col } from 'react-bootstrap'
@@ -47,7 +48,7 @@ function App() {
           <div class="input-group">
             <input
               class="input"
-              placeholder='A realistic 3d avocado'
+              placeholder='A realistic 3d avocado in Madrid'
               onChange={(e) => setUserPrompt(e.target.value)}
             />
             <button
@@ -73,6 +74,8 @@ function App() {
           }
         </Col>
       </Row>
+      <SocialFollow />
+
     </Container>
   )
 }
