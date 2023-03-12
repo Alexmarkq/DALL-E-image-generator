@@ -1,22 +1,19 @@
-import './App.css';
-import { useState } from "react";
+import './App.css'
+import { useState } from "react"
 import DalleImg from "./images/dalle.gif"
 import { Container, Row, Col } from 'react-bootstrap'
 
-const { Configuration, OpenAIApi } = require("openai");
+const { Configuration, OpenAIApi } = require("openai")
 
 
 const configuration = new Configuration({
   apiKey: process.env.REACT_APP_API_KEY,
-});
+})
 
-const openai = new OpenAIApi(configuration);
-
-
+const openai = new OpenAIApi(configuration)
 
 
 function App() {
-
 
   const [userPrompt, setUserPrompt] = useState("")
   const [imageUrl, setImageUrl] = useState("")
@@ -29,7 +26,7 @@ function App() {
       n: 1,
       size: "512x512",
     }
-    const response = await openai.createImage(imageParameters);
+    const response = await openai.createImage(imageParameters)
     const urlData = response.data.data[0].url
     console.log(urlData);
     setImageUrl(urlData);
@@ -42,16 +39,12 @@ function App() {
       <Row className='text-center'>
 
         <Col className='title col-md-12 col-sm-12 col-xl-6'>
-
-
           <blockquote>
             <p>Generate a unique image using DALL·E</p>
             <p>What do you want to see?</p>
-
           </blockquote>
 
           <div class="input-group">
-
             <input
               class="input"
               placeholder='A realistic 3d avocado'
@@ -67,7 +60,6 @@ function App() {
                 'Loading...'
                 :
                 'Generate'}
-
             </button>
           </div>
         </Col>
@@ -81,10 +73,8 @@ function App() {
           }
         </Col>
       </Row>
-
     </Container>
   )
-
 }
 
-export default App;
+export default App
