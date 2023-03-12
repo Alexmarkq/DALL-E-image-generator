@@ -18,11 +18,11 @@ div {
 
 blockquote {
   background-color: #232323;
-  font-weight: 700;
+  font-weight: 600;
   letter-spacing: -0.7px;
   margin-left: 0;
   padding: 1rem 0 1rem 2rem;
-  font-size: 1.2rem;
+  font-size: 1.5rem;
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-image: linear-gradient(35deg,
