@@ -1,0 +1,14 @@
+{
+  "files": {
+    "main.css": "/static/css/main.e8cf7a64.css",
+    "main.js": "/static/js/main.a2ae8448.js",
+    "static/media/dalle.gif": "/static/media/dalle.3630170dd8999b17eb20.gif",
+    "index.html": "/index.html",
+    "main.e8cf7a64.css.map": "/static/css/main.e8cf7a64.css.map",
+    "main.a2ae8448.js.map": "/static/js/main.a2ae8448.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.e8cf7a64.css",
+    "static/js/main.a2ae8448.js"
+  ]
+}

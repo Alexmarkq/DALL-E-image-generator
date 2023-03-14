@@ -6,10 +6,9 @@ div {
   background-color: #232323;
 }
 
-
-
 :root {
   background-color: #232323;
+  margin-top: -20px;
   --color-primary: #fae847;
   --color-secondary: #9e4af7;
   --background: hsl(230, 30%, 15%);
@@ -50,6 +49,7 @@ blockquote {
 }
 
 .input {
+  caret-color: #fae847;
   font-weight: 500;
   letter-spacing: -0.5px;
   min-height: 50px;
@@ -123,12 +123,6 @@ blockquote {
   }
 }
 
-.social-container {
-  padding: 25px 50px;
-
-
-}
-
 a.social {
   color: #989898;
   margin: 0 1rem;
@@ -140,7 +134,11 @@ a.social:hover {
   transform: translateY(-2px);
 }
 
-
+.social-container {
+  display: flex;
+  justify-content: center;
+  padding: 4rem 0 3rem;
+}
 
 
 @media (max-width: 435px) {
@@ -149,26 +147,9 @@ a.social:hover {
   }
 }
 
+
 @media (min-width: 1200px) {
   .title {
     margin-top: 12rem;
   }
-
-  #footer {
-    background-attachment: scroll;
-
-    bottom: auto;
-    left: auto;
-    padding: 4em 4em 6em 4em;
-    position: relative;
-    text-align: center;
-    width: 100%;
-  }
-
-  #footer .icons {
-    margin: 0 0 1em 0;
-  }
-
-
-
 }

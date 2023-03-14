@@ -6,19 +6,24 @@ import { Container, Row, Col } from 'react-bootstrap'
 
 const { Configuration, OpenAIApi } = require("openai")
 
-
 const configuration = new Configuration({
   apiKey: process.env.REACT_APP_API_KEY,
 })
 
 const openai = new OpenAIApi(configuration)
 
-
 function App() {
 
   const [userPrompt, setUserPrompt] = useState("")
   const [imageUrl, setImageUrl] = useState("")
   const [loadingImage, setLoadingImage] = useState(false)
+  const [value, setValue] = useState("3d avocados playing tennis")
+
+  const onInput = (e) => setValue(e.target.value);
+
+  const onClear = () => {
+    setValue("");
+  };
 
   const generateImage = async () => {
     setLoadingImage(true)
@@ -45,15 +50,17 @@ function App() {
             <p>What do you want to see?</p>
           </blockquote>
 
-          <div class="input-group">
+          <div className="input-group">
             <input
-              class="input"
-              placeholder='A realistic 3d avocado in Madrid'
+              className="input"
+              onInput={onInput}
+              value={value}
               onChange={(e) => setUserPrompt(e.target.value)}
+              onClick={onClear}
             />
             <button
               type="submit"
-              class="button--submit"
+              className="button--submit"
               onClick={() => generateImage()}
               disabled={loadingImage}>
               {loadingImage
@@ -74,6 +81,7 @@ function App() {
           }
         </Col>
       </Row>
+
       <SocialFollow />
 
     </Container>
