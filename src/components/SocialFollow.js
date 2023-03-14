@@ -1,6 +1,7 @@
-import React from "react";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faGithub, faLinkedin, faInstagram } from "@fortawesome/free-brands-svg-icons";
+import React from "react"
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
+import { faGithub, faLinkedin, faInstagram } from "@fortawesome/free-brands-svg-icons"
+
 
 
 export default function SocialFollow() {
@@ -19,5 +20,5 @@ export default function SocialFollow() {
                 <FontAwesomeIcon icon={faInstagram} size="2x" />
             </a>
         </div>
-    );
+    )
 }
