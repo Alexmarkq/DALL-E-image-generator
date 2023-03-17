@@ -2,5 +2,5 @@
 
 DALL-E clone using OPENAI api
 
-## Live version here ---> https://coolcamps.netlify.app/
+## Live version here ---> https://mydalle-generator.netlify.app/
 
